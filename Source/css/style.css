@@ -1,0 +1,200 @@
+/* Universal box-sizing for easier layout management */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling: font, background color, and default text color */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Header styling: background, text color, flexbox for alignment, and padding */
+header {
+    background-color: #2c2c2c;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; /* Space out title, nav, and logo */
+    align-items: center; /* Vertically align items */
+    padding: 1rem 2rem;
+}
+
+/* Header image (logo) styling: width and border-radius for circular shape */
+header img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* Navigation list styling: remove bullets, use flexbox for horizontal layout, and add spacing */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Space between navigation items */
+}
+
+/* Navigation link styling: color, remove underline, bold text, and smooth transition for hover effect */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Navigation link hover effect */
+nav ul li a:hover {
+    color: #ccc; /* Lighter color on hover */
+}
+
+/* Main section styling: padding, flexbox for column layout, and center alignment */
+.main {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero section styling: flexbox for content arrangement, default column for mobile, spacing, and max-width */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Default to column layout for mobile devices */
+    align-items: center; /* Center items horizontally */
+    gap: 1rem; /* Reduced space between text and image for better fit */
+    margin-bottom: 2rem; /* Space below the hero section */
+    max-width: 900px; /* Limit the maximum width for better readability */
+    width: 100%; /* Take full width within its container */
+    padding: 1.5rem 1rem; /* Internal padding for the hero section */
+}
+
+/* Hero text styling: font size, text alignment, color, and flex-item properties */
+.hero-text {
+    font-size: 1.1rem; /* Slightly reduced base font size for overall readability */
+    text-align: center; /* Center align text for mobile */
+    color: #333;
+    flex: 1; /* Allows text to take available space in flex container */
+}
+
+/* Hero text heading (h1) styling: font size and bottom margin */
+.hero-text h1 {
+    font-size: 1.8rem; /* Reduced font size for the main heading */
+    margin-bottom: 0.8rem; /* Space between heading and first paragraph */
+}
+
+/* Hero text paragraph (p) styling: line height and margin for improved readability between paragraphs */
+.hero-text p {
+    font-size: 1rem; /* Specific font size for paragraphs to ensure good readability */
+    line-height: 1.6; /* Increased line height for better spacing between lines */
+    margin-bottom: 0.8em; /* Add margin between paragraphs for visual separation */
+    text-align: justify; /* Justify text for a block-like appearance */
+}
+
+/* Remove margin from the last paragraph to prevent extra space at the bottom */
+.hero-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Hero image container styling: flex-item properties and center alignment for the image */
+.hero-image {
+    flex: 1; /* Allows image to take available space in flex container */
+    text-align: center; /* Center the image horizontally */
+}
+
+/* Hero image styling: width, max-width for responsiveness, border-radius, and box-shadow */
+.hero-image img {
+    width: 250px; /* Default width for the image */
+    max-width: 100%; /* Ensures image scales down on smaller screens */
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Cards container styling: flexbox for wrapping cards, gap, and center justification */
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+    margin-top: 2rem; /* Space above the cards section */
+    width: 100%; /* Take full width within its container */
+}
+
+/* Individual card styling: width, height, background, border-radius, shadow, and hover transition */
+.card {
+    width: 280px;
+    height: 180px;
+    background-color: #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+/* Card hover effect: lift card slightly */
+.card:hover {
+    transform: translateY(-5px); /* Move card up slightly on hover */
+}
+
+/* Responsive Adjustments for larger screens (min-width: 768px) */
+@media (min-width: 768px) {
+    /* Hero section for larger screens: switch to row layout, align text left, restore gap and padding */
+    .hero-section {
+        flex-direction: row; /* Arrange text and image side-by-side */
+        text-align: left; /* Align text to the left */
+        gap: 2rem; /* Restore slightly larger gap for desktop */
+        padding: 2rem; /* Restore slightly larger padding for desktop */
+    }
+
+    /* Hero text for larger screens: slightly adjust paragraph font size and align text left */
+    .hero-text {
+        font-size: 1rem; /* Fine-tuned paragraph font size for desktop */
+        text-align: left;
+    }
+
+    /* Hero heading (h1) for larger screens: slightly larger font size */
+    .hero-text h1 {
+        font-size: 2.2rem; /* Adjusted heading size for desktop */
+    }
+
+    /* Main section for larger screens: increase horizontal padding */
+    .main {
+        padding: 3rem 4rem;
+    }
+
+    /* Cards for larger screens: slightly larger width and height */
+    .card {
+        width: 300px;
+        height: 200px;
+    }
+
+    /* Hero image for larger screens: restore original width */
+    .hero-image img {
+        width: 300px;
+    }
+}
+
+/* Responsive Adjustments for smaller screens (max-width: 767px) */
+@media (max-width: 767px) {
+    /* Header for smaller screens: stack items vertically, reduce padding */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    /* Navigation list for smaller screens: stack items vertically, reduce gap, add top margin */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    /* Hero text for very small screens: smaller paragraph font size */
+    .hero-text {
+        font-size: 0.9rem; /* Smaller paragraph text for very small screens */
+    }
+
+    /* Hero heading (h1) for very small screens: smaller font size */
+    .hero-text h1 {
+        font-size: 1.6rem; /* Smaller heading for very small screens */
+    }
+}
