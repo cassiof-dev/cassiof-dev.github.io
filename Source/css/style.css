@@ -123,17 +123,90 @@ nav ul li a:hover {
 /* Individual card styling: width, height, background, border-radius, shadow, and hover transition */
 .card {
     width: 280px;
-    height: 180px;
-    background-color: #cccccc;
+    /* height: 180px; Removed fixed height to allow content to dictate height */
+    background-color: #fff; /* Changed card background to white for content visibility */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease; /* Smooth transform on hover */
+    display: flex; /* Use flexbox for internal content layout */
+    flex-direction: column; /* Stack content vertically */
+    overflow: hidden; /* Hide overflowing content, especially for images */
 }
 
 /* Card hover effect: lift card slightly */
 .card:hover {
     transform: translateY(-5px); /* Move card up slightly on hover */
 }
+
+/* Styling for images within cards */
+.card-img {
+    width: 100%; /* Image takes full width of the card */
+    height: 100px; /* Fixed height for consistency in thumbnails */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    border-radius: 10px 10px 0 0; /* Rounded top corners only */
+}
+
+/* Styling for content area within cards */
+.card-content {
+    padding: 1rem; /* Padding around text content */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to grow and fill space */
+}
+
+/* Styling for project titles within cards */
+.card-content h2 {
+    font-size: 1.2rem; /* Size for project titles */
+    margin-bottom: 0.5rem; /* Space below title */
+    color: #2c2c2c;
+}
+
+/* Styling for project descriptions within cards */
+.card-content p {
+    font-size: 0.9rem; /* Smaller font for descriptions */
+    line-height: 1.4; /* Adjusted line height for readability */
+    margin-bottom: 1rem; /* Space below description */
+    text-align: left; /* Keep text left-aligned for descriptions for better readability */
+}
+
+/* Styling for "Learn More" links within cards */
+.card-link {
+    color: #007bff; /* A distinct color for links */
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start; /* Align link to the start */
+    margin-top: auto; /* Push the link to the bottom of the card content */
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #0056b3;
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #2c2c2c;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 3rem; /* Space above the footer */
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #ccc;
+}
+
 
 /* Responsive Adjustments for larger screens (min-width: 768px) */
 @media (min-width: 768px) {
@@ -164,7 +237,7 @@ nav ul li a:hover {
     /* Cards for larger screens: slightly larger width and height */
     .card {
         width: 300px;
-        height: 200px;
+        /* height: 250px; Removed fixed height to allow content to dictate height */
     }
 
     /* Hero image for larger screens: restore original width */
@@ -196,5 +269,11 @@ nav ul li a:hover {
     /* Hero heading (h1) for very small screens: smaller font size */
     .hero-text h1 {
         font-size: 1.6rem; /* Smaller heading for very small screens */
+    }
+
+    /* Card adjustments for smaller screens */
+    .card {
+        width: 90%; /* Make cards take up more width on small screens */
+        max-width: 350px; /* Limit max width to prevent them from becoming too wide */
     }
 }
