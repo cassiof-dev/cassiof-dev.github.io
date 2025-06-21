@@ -1,62 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Power BI Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    h1, h2 {
-      color: #005a9e;
-    }
-    .report {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Cássio Feldkircher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #2c2c2c;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .main {
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-text {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            color: #333;
+        }
+
+        .hero-image img {
+            width: 300px;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .card {
+            width: 280px;
+            height: 180px;
+            background-color: #cccccc;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 1.3rem;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div>Portfolio Cássio Feldkircher</div>
+        <div>Aptfix Labs</div>
+    </header>
 
-  <h1>My Power BI Projects</h1>
-  <p>Welcome to my portfolio! Here you'll find interactive dashboards, key insights, and data stories I've built using Power BI.</p>
+    <section class="main">
+        <div class="hero-text">
+            Soluções de software personalizados para ajudar sua empresa a crescer.
+        </div>
+        <div class="hero-image">
+            <img src="person-working-on-laptop.jpg" alt="Pessoa trabalhando no notebook">
+        </div>
+        <div class="cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
 
-  <div class="report">
-    <h2>📊 Sales Dashboard</h2>
-    <p>A deep dive into monthly performance trends, top products, and regional sales breakdowns.</p>
-    <p><a href="https://app.powerbi.com/view?r=yourEmbedLinkHere" target="_blank">View Report</a></p>
-  </div>
-
-  <div class="report">
-    <h2>👥 HR Analytics</h2>
-    <p>Exploring employee demographics, turnover patterns, and retention strategies.</p>
-    <p><a href="https://app.powerbi.com/view?r=yourEmbedLinkHere" target="_blank">View Report</a></p>
-  </div>
-
-  <div class="report">
-    <h2>💸 Budget Tracker</h2>
-    <p>Forecasting spending patterns and visualizing variance from planned budgets using DAX measures.</p>
-    <p><a href="https://app.powerbi.com/view?r=yourEmbedLinkHere" target="_blank">View Report</a></p>
-  </div>
-
-  <footer>
-    Made with 💙 by Cássio • <a href="https://www.linkedin.com/in/YOURPROFILE/">LinkedIn</a>
-  </footer>
-
+    <script>
+        // Placeholder for future JS enhancements
+        console.log("Bem-vindo ao portfolio de Cássio!");
+    </script>
 </body>
 </html>
