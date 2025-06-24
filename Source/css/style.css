@@ -99,12 +99,12 @@ nav ul li a:hover {
     align-items: center;
 }
 
-/* Style for general section titles like "Projects" */
+/* Style for general section titles like "Projects" and "Contact" */
 .section-title {
     font-size: 2.5rem; /* Adjust size as needed */
     color: #2c2c2c;
     text-align: center;
-    margin-top: 2rem; /* Reduced space above the title from 3rem to 2rem */
+    margin-top: 2rem; /* Space above the title */
     margin-bottom: 1.5rem; /* Space below the title */
     width: 100%; /* Ensure it takes full width to center */
 }
@@ -235,6 +235,76 @@ nav ul li a:hover {
     color: #0056b3;
 }
 
+/* Contact Section Styles */
+.contact-section {
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    margin-top: 3rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center content within the section */
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row; /* Changed to row to place links side-by-side */
+    gap: 15px;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping onto new lines if necessary */
+}
+
+.contact-link {
+    display: inline-flex; /* Use inline-flex to align icon and text side-by-side */
+    align-items: center; /* Vertically align items */
+    background-color: #007bff; /* Default button color */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    /* Removed width: 100%; max-width: 250px; to allow natural sizing based on content */
+    justify-content: center; /* Center text and icon */
+}
+
+.contact-link:hover {
+    background-color: #0056b3;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Space between icon and text */
+    vertical-align: middle; /* Align with text */
+    filter: invert(100%); /* Changed icon color to white (blank) */
+}
+
+/* Specific background colors for LinkedIn and Email for better branding */
+.contact-link[href*="linkedin.com"] {
+    background-color: #0A66C2; /* LinkedIn blue */
+}
+
+.contact-link[href*="linkedin.com"]:hover {
+    background-color: #004182;
+}
+
+.contact-link[href*="mailto:"] {
+    background-color: #D44638; /* Common red for email/Gmail */
+}
+
+.contact-link[href*="mailto:"]:hover {
+    background-color: #A3342C;
+}
+
 
 /* Footer styling */
 footer {
@@ -294,6 +364,12 @@ footer {
     /* Hero image for larger screens: restore original width */
     .hero-image img {
         width: 300px;
+    }
+
+    /* Contact Section on Larger Screens - Links already handled by default .contact-links */
+    .contact-link {
+        width: auto; /* Allow auto width based on content */
+        max-width: none; /* Remove max-width constraint for desktop */
     }
 }
 
@@ -367,5 +443,11 @@ footer {
     .card {
         width: 90%; /* Make cards take up more width on small screens */
         max-width: 350px; /* Limit max width to prevent them from becoming too wide */
+    }
+
+    /* Contact links on small screens */
+    .contact-link {
+        width: 100%; /* Make them full width again on mobile */
+        max-width: 250px; /* Limit max width on mobile */
     }
 }
