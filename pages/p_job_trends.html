@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job trends for workers - Cássio Feldkircher's Portfolio</title>
+    <!-- Link to the external global CSS file -->
+    <link rel="stylesheet" href="../Source/css/style.css">
+    <!-- Link to the external project-specific CSS file -->
+    <link rel="stylesheet" href="../Source/css/job_trends.css">
+</head>
+<body>
+    <header>
+        <div>Cássio Feldkircher's Portfolio</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="main-nav"> <ul>
+                <li><a href="../index.html#about">About</a></li> <!-- Updated link -->
+                <li><a href="../index.html#projects">Projects</a></li> <!-- Updated link -->
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div><img src="../Source/images/CF_gray.png" alt="CF logo"></div>
+    </header>
+
+    <main class="main">
+        <section class="project-detail-section">
+            <h1>Job trends for workers</h1>
+            <img src="../Source/images/projects/jobs_statistics/screen.png" alt="Job trends project main image" class="project-detail-image">
+            <div class="project-description">
+                <p>This dashboard is divided into three main parts: <b>Data, Modeling & Connections, and Reports</b>.</p>
+                <br>
+                <p><b>1. Data</b></p>
+                <ul>
+                    <li>The data was imported from a .csv file (<i>f_job_dataset</i> table).</li>
+                    <li>Due to the manageable file size, all data transformations were performed directly within Power BI.</li>
+                    <li>The skills column contains the required skills for each job.
+                        <ul>
+                            To handle this efficiently:
+                            <li>A new table, <i>f_job_skills</i>, was created by duplicating <i>f_job_dataset</i> and keeping only the job_id and skills columns.</li>
+                            <li>In <i>f_job_skills</i>, the skills column was split by commas, with each skill placed on a new row.</li>
+                            This separation prevents the main table from growing unnecessarily and improves data organization.
+                        </ul>
+                    </li>
+                    <li>A <i>d_calendar</i> table was also created to manage date-related fields.
+                        <ul>
+                            This prevents Power BI from auto-generating a separate date table for each datetime column, reducing memory usage and improving performance.
+                        </ul>
+                    </li>
+                    <li>Two additional dimension tables were added to improve readability in the reports:
+                        <ul>
+                            <li><i>d_experience</i>: Maps acronyms in the experience_level column to readable names (e.g., EN = Entry Level).</li>
+                            <li><i>d_type_employment</i>: Similar to <i>d_experience</i>, this table translates abbreviations for employment types (e.g., FT = Full-Time).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- <br> -->
+                <p><b>2. Data Model & Relationships</b></p>
+                <ul>
+                    <li>The model follows a <b>star schema</b>, with fact and dimension tables:
+                        <ul>
+                            <li><b>Fact table</b>: <i>f_job_dataset, f_job_skills</i></li>
+                            <li><b>Dimension tables</b>: <i>d_calendar, d_experience, d_type_employment</i></li>
+                        </ul>
+                    </li>
+                    <li>This design improves report performance and simplifies relationship management.</li>
+                </ul>
+                <!-- <br> -->
+                <p><b>3. Reports</b></p>
+                <ul>
+                    <li>A consistent <b>color palette</b> was used to ensure a clean and visually appealing interface.</li>
+                    <li>Reports were designed to help users plan their personal and professional development based on job market insights.</li>
+                    <li>The layout follows a <b>Z-pattern</b>:
+                        <ul>
+                            <li>Key insights are placed in the top-left.</li>
+                            <li>The viewer’s attention flows from left to right, then top to bottom.</li>
+                        </ul>
+                    </li>
+                    <li>All visuals are <b>fully interactive</b>:
+                        <ul>
+                            <li>Selecting any element in a visual will filter the other charts accordingly.</li>
+                        </ul>
+                    </li>
+                    <li><b>Global filters</b> are fixed at the top, just below the dashboard title:
+                        <ul>
+                            <li>These filters allow users to refine data even when certain fields aren't shown directly in the charts.</li>
+                        </ul>
+                    </li>
+                    <li>The <b>last data refresh date</b> is displayed at the top right, so users are always aware of how up-to-date the information is.</li>
+                </ul>
+            </div>
+           <div class="project-actions-container">
+                <div class="back-to-portfolio">
+                    <a href="../index.html">← Back to Portfolio</a>
+                </div>
+                <!-- New GitHub link with SVG icon -->
+                <a href="https://github.com/cassiof-dev/projects_pbi/tree/main/Jobs_statistics" target="_blank" class="project-github-link">
+                    <img src="../Source/icons/icons8-github.svg" alt="GitHub icon" class="github-icon">
+                    <span>View on GitHub</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../Source/js/scripts.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Cássio Feldkircher. All rights reserved.</p>
+            <p>Follow me on <a href="https://www.linkedin.com/in/cassiofeldkircher/" target="_blank">LinkedIn</a></p>
+        </div>
+    </footer>
+</body>
+</html>

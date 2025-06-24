@@ -15,7 +15,8 @@
             <span></span>
             <span></span>
         </div>
-        <nav id="main-nav"> <ul>
+        <nav id="main-nav">
+            <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#services">Services</a></li>
@@ -26,7 +27,7 @@
     </header>
 
     <section class="main">
-        <div class="hero-section">
+        <div class="hero-section" id="about"> <!-- Existing id="about" -->
             <div class="hero-text">
                 <h1>I'm here to help you reach your goals.</h1>
                 <p>Hi, I'm Cássio. I'm passionate about stories - they help us understand the past and guide us toward the future. Through my journey, I’ve learned a lot about people: their complexity teaches us every day how to better understand their behavior, desires, and decisions.</p>
@@ -40,14 +41,16 @@
             </div>
         </div>
 
-        <div class="cards">
+        <h2 class="section-title">Projects</h2> <!-- New Projects Title -->
+
+        <div class="cards" id="projects"> <!-- Added id="projects" here as requested -->
             <!-- Project Card 1 -->
             <div class="card">
                 <img src="Source/images/projects/jobs_statistics/screen.png" alt="jobs_statistics" class="card-img">
                 <div class="card-content">
                     <h2>Job trends for workers</h2>
                     <p>This project presents insights from job postings, focusing on the needs of people searching for new job opportunities</p>
-                    <a href="#" class="card-link">Learn More</a>
+                    <a href="pages/p_job_trends.html" class="card-link">Learn More</a>
                 </div>
             </div>
             <!-- Project Card 2 -->

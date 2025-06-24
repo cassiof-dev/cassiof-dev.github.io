@@ -1,0 +1,157 @@
+/* Specific styles for the project page */
+.project-detail-section {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-detail-section h1 {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-detail-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Max height for the main project image */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1em;
+    text-align: justify; /* Keep justified text for paragraphs */
+}
+
+.project-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Styles for unordered lists within the project description */
+.project-description ul {
+    list-style-type: disc; /* Ensures default bullet points are visible */
+    margin-left: 25px; /* Adds indentation for the list */
+    margin-bottom: 1em; /* Space below each main list */
+    padding-left: 0; /* Remove default padding, margin-left handles indentation */
+}
+
+/* Styles for nested unordered lists */
+.project-description ul ul {
+    list-style-type: circle; /* Use a different bullet for nested lists */
+    margin-bottom: 0.5em; /* Smaller margin for nested lists */
+}
+
+/* Styles for list items within the project description */
+.project-description li {
+    font-size: 1rem; /* Consistent font size for list items */
+    line-height: 1.6; /* Ensure good line spacing for list items */
+}
+
+/* Adjusting the selector to create a separator line between major sections' headings.
+   This now targets a paragraph that immediately follows a ul. */
+.project-description ul + p {
+    border-top: 1px solid #ddd; /* A subtle light gray line */
+    padding-top: 1.5rem; /* Space above the line */
+    margin-top: 1.5rem; /* Space between the line and the previous content */
+}
+
+
+/* Container for actions (back button and GitHub link) */
+.project-actions-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Space between buttons/links */
+    margin-top: 2.5rem; /* Space above the container */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Style for the "Back to Portfolio" link */
+.back-to-portfolio {
+    display: block;
+    text-align: center;
+}
+
+.back-to-portfolio a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-portfolio a:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the GitHub link */
+.project-github-link {
+    display: inline-flex; /* Use flex to align icon and text */
+    align-items: center; /* Vertically align items */
+    background-color: #333; /* GitHub color */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling for the GitHub icon when it's an image */
+.github-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align with text */
+    filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(180deg) brightness(110%) contrast(100%); /* Make SVG white */
+}
+
+.project-github-link:hover {
+    background-color: #555; /* Darker on hover */
+}
+
+
+/* Responsive adjustments for the project detail page */
+@media (max-width: 767px) {
+    .project-detail-section {
+        padding: 2rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-detail-section h1 {
+        font-size: 2rem;
+    }
+
+    .project-description p {
+        font-size: 1rem;
+    }
+
+    .project-description ul {
+        margin-left: 20px; /* Adjust indentation for smaller screens */
+    }
+
+    .project-actions-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 15px; /* Adjust gap when stacked */
+    }
+
+    .project-actions-container a {
+        width: 100%; /* Make buttons full width on small screens */
+        max-width: 250px; /* Limit their max width */
+    }
+}

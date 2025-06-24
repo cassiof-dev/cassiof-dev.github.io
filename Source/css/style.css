@@ -5,11 +5,17 @@
     box-sizing: border-box;
 }
 
-/* Body styling: font, background color, and default text color */
+/* HTML and Body styling for smooth scrolling with fixed header */
+html {
+    scroll-behavior: smooth; /* Ensures smooth scrolling */
+    scroll-padding-top: 100px; /* Leave space for the fixed header when scrolling to anchors */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f2f2f2;
     color: #333;
+    padding-top: 100px; /* Add padding to body to prevent content from hiding behind fixed header */
 }
 
 /* Header styling: background, text color, flexbox for alignment, and padding */
@@ -20,7 +26,11 @@ header {
     justify-content: space-between; /* Space out title, nav, and logo */
     align-items: center; /* Vertically align items */
     padding: 1rem 2rem;
-    position: relative; /* Needed for positioning the mobile menu button */
+    position: fixed; /* Make the header fixed at the top of the viewport */
+    top: 0; /* Position it at the very top */
+    width: 100%; /* Make it span the full width */
+    z-index: 1000; /* Ensure it stays above other content when scrolling */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a subtle shadow for distinction */
 }
 
 /* Header image (logo) styling: width and border-radius for circular shape */
@@ -83,10 +93,20 @@ nav ul li a:hover {
 
 /* Main section styling: padding, flexbox for column layout, and center alignment */
 .main {
-    padding: 3rem 2rem;
+    padding: 2rem 2rem; /* Reduced padding-top from 3rem to 2rem */
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Style for general section titles like "Projects" */
+.section-title {
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: #2c2c2c;
+    text-align: center;
+    margin-top: 2rem; /* Reduced space above the title from 3rem to 2rem */
+    margin-bottom: 1.5rem; /* Space below the title */
+    width: 100%; /* Ensure it takes full width to center */
 }
 
 /* Hero section styling: flexbox for content arrangement, default column for mobile, spacing, and max-width */
@@ -279,12 +299,17 @@ footer {
 
 /* Responsive Adjustments for smaller screens (max-width: 767px) */
 @media (max-width: 767px) {
-    /* Header for smaller screens: stack items vertically, reduce padding */
+    /* Header for smaller screens: stack elements vertically */
     header {
         flex-direction: row; /* Keep elements inline */
         justify-content: space-between; /* Space out title/logo and menu icon */
         align-items: center;
         padding: 1rem;
+    }
+
+    /* Adjust body padding top for mobile if header height changes */
+    body {
+        padding-top: 80px; /* Adjust based on actual mobile header height */
     }
 
     /* Show hamburger menu icon on small screens */
@@ -303,7 +328,7 @@ footer {
         display: none; /* Hidden by default */
         text-align: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
+        z-index: 999; /* Ensure nav is below the header's z-index */
         padding-bottom: 1rem; /* Add some padding at the bottom */
     }
 
